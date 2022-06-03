@@ -17,7 +17,7 @@
 
     <?php
     require 'connection.php';
-    
+
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -60,6 +60,14 @@
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "Файл ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " е качен.";
                 echo "<br/>";
+                $sql = "INSERT INTO images (image) VALUES ('{$_FILES["fileToUpload"]["name"]}')";
+
+                if (mysqli_query($db, $sql)) {
+                    echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+                }
+
             } else {
                 echo "Възникна грешка при качването на файла.";
                 echo "<br/>";
@@ -68,6 +76,7 @@
         }
 
     ?>
+
 
     <div id="file-list">
 

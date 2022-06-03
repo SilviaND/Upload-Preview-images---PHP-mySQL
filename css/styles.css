@@ -2,7 +2,7 @@
     font-family: "Comic Sans MS", sans-serif;
     background-color: lightyellow;
     width: 80%;
-    margin: 5%;
+    margin: 2%;
     padding: 5%;
 }
 p {
@@ -36,4 +36,25 @@ form {
 #backBtn {
     width: 15%;
     margin: 20px 0px;
+}
+.list-group {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+#gallery-item {
+    width: 30%;
+    margin: 1rem;
+}
+#img {
+    margin: 1rem;
+    width: 70%;
+    height: 200px;
+}
+.btn {
+    margin-bottom: 1rem;
 }

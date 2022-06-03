@@ -18,16 +18,59 @@ require 'connection.php';
         <div id="file-upload-form" class="text-center m-5">
             <form action="./upload.php" method="post" enctype="multipart/form-data">
                 <p class="text-center">Избери снимка за качване:</p>
-<!--                --><?php //if(!empty($statusMsg)){ ?>
-<!--                    <p class="status --><?php //echo $status; ?><!--">--><?php //echo $statusMsg; ?><!--</p>-->
-<!--                --><?php //} ?>
                 <input type="file" name="fileToUpload" id="fileToUpload" class="form-control text-center"><br/>
                 <input type="submit" value="Качи снимката" name="submit" class="form-control text-center" id="submit-btn">
             </form>
         </div>
-    <div class="gallery">
+</div>
+<div class="container text-center">
+    <div id="file-list">
+        <h3>Списък на файловете:</h3>
+        <?php
 
+        require 'connection.php';
+
+        $sql = "SELECT id, image FROM images";
+        $result = $db->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo "<ul class='list-group'>";
+                echo "<li class='list-group-item m-2'> id: ". $row["id"]. "<br/>" . " Име на файла: ". $row["image"]. "<p>";
+                echo "</ul>";
+            }
+        } else {
+            echo "0 results";
+        }
+
+
+        ?>
     </div>
+</div>
+    <div class="container text-center">
+    <div class="gallery">
+        <?php
+            $query = $db->query("SELECT * FROM images");
+            if($query->num_rows > 0){
+                while($row = $query->fetch_assoc()){
+                    $imageURL = 'uploads/'.$row["image"];
+                    ?>
+                    <div class="img-thumbnail" id="gallery-item">
+                        <img id="img" class="img-thumbnail" src="<?php echo $imageURL; ?>" /><br/>
+                        <a class="btn" href="delete-img.php?id=<?php echo $row["id"]; ?>">Изтрий снимката</a>
+                    </div>
+        <?php
+                }
+                } else {
+                ?>
+        <p>No image(s) found...</p>
+        <?php
+            }
+
+        ?>
+    </div>
+</div>
 </div>
 <script src="./js/script.js"></script>
 <script src="./js/bootstrap.min.js"></script>
