@@ -1,0 +1,39 @@
+.container {
+    font-family: "Comic Sans MS", sans-serif;
+    background-color: lightyellow;
+    width: 80%;
+    margin: 5%;
+    padding: 5%;
+}
+p {
+    font-size: 2rem;
+    color: darkturquoise;
+    font-weight: 600;
+}
+
+form {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+#submit-btn, #backBtn {
+    background-color: darkturquoise;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+#submit-btn:hover, #backBtn:hover {
+    background-color: white;
+    color: darkturquoise;
+    border: 1px solid darkturquoise;
+}
+#upload-info {
+    text-align: center;
+    margin: auto;
+}
+#backBtn {
+    width: 15%;
+    margin: 20px 0px;
+}
