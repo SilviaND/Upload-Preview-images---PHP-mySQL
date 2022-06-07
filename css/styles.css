@@ -5,6 +5,7 @@
     margin: 2%;
     padding: 2%;
 }
+
 p {
     font-size: 2rem;
     color: darkturquoise;
@@ -16,6 +17,7 @@ form {
     text-align: center;
     margin: auto;
 }
+
 #submit-btn, #backBtn {
     background-color: darkturquoise;
     color: white;
@@ -24,37 +26,45 @@ form {
     margin: auto;
     width: 50%;
 }
+
 #submit-btn:hover, #backBtn:hover {
     background-color: white;
     color: darkturquoise;
     border: 1px solid darkturquoise;
 }
+
 #upload-info {
     text-align: center;
     margin: auto;
 }
+
 #backBtn {
     width: 15%;
     margin: 20px 0px;
 }
+
 .list-group {
     width: 30%;
     text-align: center;
     margin: auto;
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
 }
+
 #gallery-item {
     width: 30%;
     margin: 1rem;
 }
+
 #img {
     margin: 1rem;
     width: 70%;
     height: 200px;
 }
+
 .btn {
     margin-bottom: 1rem;
 }

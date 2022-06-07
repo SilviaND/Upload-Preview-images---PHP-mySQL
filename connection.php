@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$dbHost     = "localhost";
+$dbHost = "localhost";
 $dbUsername = "root";
 $dbPassword = "root";
-$dbName     = "uploads_db";
+$dbName = "uploads_db";
 
 // Create database connection
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

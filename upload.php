@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,10 +21,10 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    if(isset($_POST["submit"])) {
+    if (isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if ($check !== false) {
-//            echo "Файлът е снимка - " . $check["mime"] . ".";
+
             echo "<br/>";
             $uploadOk = 1;
         } else {
@@ -76,11 +74,6 @@
         }
 
     ?>
-
-
-    <div id="file-list">
-
-    </div>
 
     <button type="button" class="btn" onclick="window.location.href='index.php'" id="backBtn">Назад</button>
 </div>
