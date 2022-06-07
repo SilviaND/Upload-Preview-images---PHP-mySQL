@@ -18,7 +18,7 @@ form {
     margin: auto;
 }
 
-#submit-btn, #backBtn {
+#submit-btn, #backBtn, #btn-delete, #btn-register, #btn-login {
     background-color: darkturquoise;
     color: white;
     font-weight: 500;
@@ -27,7 +27,7 @@ form {
     width: 50%;
 }
 
-#submit-btn:hover, #backBtn:hover {
+#submit-btn:hover, #backBtn:hover, #btn-delete:hover, #btn-register:hover, #btn-login:hover {
     background-color: white;
     color: darkturquoise;
     border: 1px solid darkturquoise;
@@ -67,4 +67,31 @@ form {
 
 .btn {
     margin-bottom: 1rem;
+}
+
+.user-form, .btn-info {
+    font-size: 1.2rem;
+    color: darkturquoise;
+    text-decoration: none;
+}
+
+.user-form:hover, .btn-info:hover {
+    cursor: pointer;
+    color: darkturquoise;
+    border: 1px solid darkturquoise;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+#btn-register, #btn-login {
+    border: none;
+    border-radius: 7px;
+    width: 40%;
+    padding: 5px 7px;
+    margin: 10px;
+}
+
+#logout-btn {
+    width: 10%;
 }

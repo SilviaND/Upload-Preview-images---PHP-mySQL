@@ -1,9 +1,6 @@
 <?php
-
 require "connection.php";
-
 $id = $_GET["id"];
-
 $query = $db->query("SELECT * from images WHERE id=$id");
 
 if ($query->num_rows > 0) {
@@ -20,9 +17,9 @@ if ($query->num_rows > 0) {
 $sql = "DELETE FROM images WHERE id=$id";
 
 if ($db->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "<script>alert('Record deleted successfully')</script>";
 } else {
-    echo "Error deleting record: " . $db->error;
+    echo "<script>alert('Error deleting record: ' . $db->error)</script>";
 }
 
 $db->close();
@@ -30,5 +27,5 @@ $db->close();
 ?>
 
 <script>
-    window.location = "index.php";
+    window.location = "gallery.php";
 </script>

@@ -71,7 +71,7 @@
             }
         }
     ?>
-    <button type="button" class="btn" onclick="window.location.href='index.php'" id="backBtn">Back</button>
+    <button type="button" class="btn" onclick="window.location.href='gallery.php'" id="backBtn">Back</button>
 </div>
 </body>
 </html>
