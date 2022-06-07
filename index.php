@@ -42,8 +42,6 @@ require 'connection.php';
         } else {
             echo "0 results";
         }
-
-
         ?>
     </div>
 </div>

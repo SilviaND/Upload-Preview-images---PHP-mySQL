@@ -45,12 +45,11 @@
             $uploadOk = 0;
         }
 
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
             echo "Можете да изберете само файл с JPG, PNG, JPEG & GIF формат.";
             echo "<br/>";
             $uploadOk = 0;
         }
-
         if ($uploadOk == 0) {
             echo "Файлът не е качен.";
             echo "<br/>";
@@ -65,16 +64,12 @@
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($db);
                 }
-
             } else {
                 echo "Възникна грешка при качването на файла.";
                 echo "<br/>";
             }
-
         }
-
     ?>
-
     <button type="button" class="btn" onclick="window.location.href='index.php'" id="backBtn">Назад</button>
 </div>
 </body>
