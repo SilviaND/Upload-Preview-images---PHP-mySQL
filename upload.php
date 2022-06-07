@@ -28,49 +28,50 @@
             echo "<br/>";
             $uploadOk = 1;
         } else {
-            echo "Фaйлът не е снимка.";
+            echo "The file is not an image.";
             echo "<br/>";
             $uploadOk = 0;
         }
     }
         if (file_exists($target_file)) {
-            echo "Файлът вече съществува.";
+            echo "The file already exist.";
             echo "<br/>";
             $uploadOk = 0;
         }
 
         if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Файлът е прекалено голям.";
+            echo "The file is too large.";
             echo "<br/>";
             $uploadOk = 0;
         }
 
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            echo "Можете да изберете само файл с JPG, PNG, JPEG & GIF формат.";
+            echo "You can choose only JPG, PNG, JPEG & GIF file format.";
             echo "<br/>";
             $uploadOk = 0;
         }
         if ($uploadOk == 0) {
-            echo "Файлът не е качен.";
+            echo "The file is not uploaded.";
             echo "<br/>";
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "Файл ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " е качен.";
+                echo "File ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " is uploaded.";
                 echo "<br/>";
                 $sql = "INSERT INTO images (image) VALUES ('{$_FILES["fileToUpload"]["name"]}')";
 
                 if (mysqli_query($db, $sql)) {
                     echo "New record created successfully";
+                    echo "<br/>";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($db);
                 }
             } else {
-                echo "Възникна грешка при качването на файла.";
+                echo "An error occurred while uploading the file.";
                 echo "<br/>";
             }
         }
     ?>
-    <button type="button" class="btn" onclick="window.location.href='index.php'" id="backBtn">Назад</button>
+    <button type="button" class="btn" onclick="window.location.href='index.php'" id="backBtn">Back</button>
 </div>
 </body>
 </html>

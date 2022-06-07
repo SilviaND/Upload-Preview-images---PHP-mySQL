@@ -17,15 +17,15 @@ require 'connection.php';
 <div class="container text-center">
     <div id="file-upload-form" class="text-center m-5">
         <form action="./upload.php" method="post" enctype="multipart/form-data">
-            <p class="text-center">Избери снимка за качване:</p>
+            <p class="text-center">Choose an image for upload:</p>
             <input type="file" name="fileToUpload" id="fileToUpload" class="form-control text-center"><br/>
-            <input type="submit" value="Качи снимката" name="submit" class="form-control text-center" id="submit-btn">
+            <input type="submit" value="Upload the file" name="submit" class="form-control text-center" id="submit-btn">
         </form>
     </div>
 </div>
 <div class="container text-center">
     <div id="file-list">
-        <p>Списък на файловете:</p>
+        <p>File List:</p>
         <?php
         require 'connection.php';
 
@@ -36,7 +36,7 @@ require 'connection.php';
             // output data of each row
             while ($row = $result->fetch_assoc()) {
                 echo "<ul class='list-group'>";
-                echo "<li class='list-group-item m-2'> id: " . $row["id"] . "<br/>" . " Име на файла: " . $row["image"] . "<p>";
+                echo "<li class='list-group-item m-2'> id: " . $row["id"] . "<br/>" . " File name: " . $row["image"] . "<p>";
                 echo "</ul>";
             }
         } else {
@@ -61,7 +61,7 @@ require 'connection.php';
                     <br/>
                     <a class="btn"
                        href="delete-img.php?id=<?php echo $row["id"]; ?>">
-                        Изтрий снимката
+                        Delete image
                     </a>
                 </div>
                 <?php
